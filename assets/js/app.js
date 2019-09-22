@@ -7,7 +7,14 @@ board.addList('In Progress');
 board.addList('Done');
 
 board.lists.forEach(function(list, index) {
-  list.addCard('Card #' + (index + 1));
-});
+  var $listContainer = document.createElement('div');
+  $listContainer.className = 'list';
 
-$boardContainer.textContent = JSON.stringify(board);
+  var $header = document.createElement('header');
+  var $headerButton = document.createElement('button');
+  $headerButton.textContent = list.title;
+
+  $header.appendChild($headerButton);
+  $listContainer.appendChild($header);
+  $boardContainer.appendChild($listContainer);
+});
