@@ -3,11 +3,12 @@ var $boardContainer = document.querySelector('.container');
 var board = new Board();
 
 function handleListCreate() {
-  var listTitle = prompt('New list title');
+  var listTitle = prompt('New list title') || '';
 
-  board.addList(listTitle);
-
-  renderBoard();
+  if (listTitle.trim()) {
+    board.addList(listTitle);
+    renderBoard();
+  }
 }
 
 function renderBoard() {
