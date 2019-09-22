@@ -3,7 +3,11 @@ var $boardContainer = document.querySelector('.container');
 var board = new Board();
 
 function handleListCreate() {
-  alert('Clicked!');
+  var listTitle = prompt('New list title');
+
+  board.addList(listTitle);
+
+  renderBoard();
 }
 
 function renderBoard() {
