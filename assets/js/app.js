@@ -6,7 +6,7 @@ board.addList('To Do');
 board.addList('In Progress');
 board.addList('Done');
 
-board.lists.forEach(function(list) {
+board.lists.forEach(function(list, index) {
   list.addCard('Card #' + (index + 1));
 });
 
