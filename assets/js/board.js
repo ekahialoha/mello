@@ -30,6 +30,14 @@ class Board {
     var list = new List(text);
     this.lists.push(list);
   }
+
+  addCard(listId, cardText) {
+    this.lists.forEach(function(list) {
+      if (listId === list.id) {
+        list.addCard(cardText);
+      }
+    });
+  }
 }
 
 Board.lastId = 0;
