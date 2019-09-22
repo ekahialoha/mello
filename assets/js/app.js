@@ -11,6 +11,8 @@ function handleListCreate() {
 }
 
 function renderBoard() {
+  $boardContainer.innerHTML = '';
+
   board.lists.forEach(function(list) {
     var $listContainer = document.createElement('div');
     $listContainer.className = 'list';
