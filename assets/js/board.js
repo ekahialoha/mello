@@ -5,6 +5,8 @@ class Card {
   }
 }
 
+Card.lastId = 0;
+
 class List {
   constructor(title) {
     this.title = title;
@@ -15,6 +17,14 @@ class List {
   addCard(text) {
     var card = new Card(text);
     this.cards.push(card);
+  }
+
+  findCard(cardId) {
+    return this.cards.find(function(card) {
+      if (cardId === card.id) {
+        return card;
+      }
+    });
   }
 }
 
@@ -49,6 +59,15 @@ class Board {
     if (list) {
       list.addCard(cardText);
     }
+  }
+
+  editCard(cardId, cardText) {
+    this.lists.forEach(function(list) {
+      var card = list.findCard(cardId);
+      if (card) {
+        card.text = cardText;
+      }
+    });
   }
 }
 
