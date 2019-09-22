@@ -58,3 +58,20 @@ nav button:focus {
   width: 350px;
   max-width: 75%;
 }
+
+header {
+  font-size: 1.1em;
+  height: 40px;
+  padding: 10px;
+}
+
+.container {
+  display: flex;
+  overflow-x: auto;
+  height: calc(100% - 80px);
+}
+
+.container > * {
+  flex: 0 0 auto;
+  margin-left: 10px;
+}
