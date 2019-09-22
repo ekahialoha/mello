@@ -6,8 +6,8 @@ function handleListCreate() {
   var listTitle = prompt('New list title') || '';
 
   if (listTitle.trim()) {
-    board.addList(listTitle);
-    renderBoard();
+  board.addList(listTitle);
+  renderBoard();
   }
 }
 
@@ -22,10 +22,13 @@ function renderBoard() {
 
     var $headerButton = document.createElement('button');
     $headerButton.textContent = list.title;
+    var $addCardButton = document.createElement('button');
+    $addCardButton.textContent = 'Add a card...';
 
     $header.appendChild($headerButton);
     $listContainer.appendChild($header);
-    $boardContainer.appendChild($listContainer);
+    $listContainer.appendChild($addCardButton);
+    $boardContainer.appendChild($listContainer);;
   });
 
   var $addListContainer = document.createElement('div');
